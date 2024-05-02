@@ -1,16 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-    int a, b, c=1;
+int main()
+{
+    int a,i=0;
     cin >> a;
-    cin >> b;
-    while(c=1){
-    cin >> c;
-    if(c==0){
-        cout << a + b << endl;
-    }else{
-        break;
+    while (i<a)
+    {
+        cout << i << endl;
+        i++;
     }
-    }
+    
+    return 0;
 }
