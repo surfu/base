@@ -10,7 +10,7 @@ int main(){
     if(c==0){
         cout << a + b << endl;
     }else{
-        break;
+        break;}
     }
-    }
+    renurn 0;
 }
