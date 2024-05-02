@@ -10,4 +10,5 @@ int main(){
         c = c + a;
     }
         cout << c+1 << endl;
+    return 0;
 }
