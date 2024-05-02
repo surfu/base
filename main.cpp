@@ -12,5 +12,5 @@ int main(){
     }else{
         break;}
     }
-    renurn 0;
+    return 0;
 }
