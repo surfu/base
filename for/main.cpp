@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int count = 0; 
-    for (int i = 100; i <= 999; ++i)
+    for (int i = 1; i <= 999; ++i)
     {
         int hundr = i / 100;
         cout << hundr;
