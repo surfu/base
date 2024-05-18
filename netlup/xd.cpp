@@ -9,6 +9,7 @@ int main(){
         cin >> num;
         if(num>=start_diap && num<=end_diap){
             cout << "I congratulate you for doing everything according to the instructions" << endl;
+            break;
         }else{
             cout << "I'm sorry, but you didn't do everything according to the instructions" << endl;
             continue;
