@@ -3,29 +3,50 @@
 
 using namespace std;
 
+void reverse(int* arr, int size) {
+    int* start = arr;
+    int* end = arr + size - 1;
+
+    for (;;) {
+        if (start >= end){ break;}
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+
+        start++;
+        end--;
+    }
+}
+
 int main() {
-    int* size, *un;
-    cin>>*size;
-    int* ptr[*size],* ptr1[*size];
+    srand(time(0));
+    int size;
 
-    for(int i =0; i<*size;++i){
-        *un += rand() % 100;
-        *un = *ptr[i];
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    if (size <= 0) {
+        cout << "Invalid size!" << endl;
+        return 1;
     }
 
-    for (int i = 0; i < *size; ++i) {
-        *(ptr1 + i) = *(ptr + i);
+    int* arr = new int[size];
+
+    for (int i = 0; i < size; ++i) {
+        arr[i] = rand() % 100;
     }
 
-    cout << "Array:" << endl;
-    for (int i = 0; i < *size; ++i) {
-        cout << *(ptr1 + i) << " ";
+    cout << "Original array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
     }
     cout << endl;
 
-    cout << "Copied array:" << endl;
-    for (int i = 0; i < *size; ++i) {
-        cout << *(ptr1 + i) << " ";
+    reverse(arr, size);
+
+    cout << "Reversed array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
     }
     cout << endl;
 
