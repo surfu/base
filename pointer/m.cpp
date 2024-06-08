@@ -18,9 +18,7 @@ int main() {
 
     cout<<*ptrnum<<*ptrnum1<<endl;
 
-    delete ptrnum;
-    delete ptrnum1;
-    delete ptropt;
+    delete ptrnum,ptrnum1, ptropt;
 
     return 0;
 }
