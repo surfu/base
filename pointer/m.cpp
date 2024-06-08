@@ -17,5 +17,7 @@ int main() {
 
     cout << "The larger number is: " << max << endl;
 
+    delete ptrA, ptrB;
+
     return 0;
 }
