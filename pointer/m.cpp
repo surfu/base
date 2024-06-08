@@ -12,7 +12,7 @@ int main() {
     cin>>*size;
     
     for(int i =0; i<*size;++i){
-        *ptr = rand() % 100;
+        *ptr += rand() % 100;
         *ptr = arr[i];
     }
 
