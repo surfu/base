@@ -9,6 +9,8 @@ int main() {
     int *ptr;
     int arr[*size];
 
+    cin>>*size;
+    
     for(int i =0; i<*size;++i){
         *ptr += rand() % 100;
         *ptr = arr[i];
