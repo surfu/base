@@ -18,6 +18,6 @@ int main() {
     } else {
         cout << "The num is zero." << endl;
     }
-
+    delete ptrnum;
     return 0;
 }
