@@ -2,11 +2,13 @@
 #include <ctime>
 using namespace std;
 
-void print(int arr[], int size){
-    for(int i = 0; i<size;i++){
-        cout<<arr[i]<<" ";
+bool isInArray(int elem, int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] == elem) {
+            return true;
+        }
     }
-    cout<<endl;
+    return false;
 }
 
 void creat(int arr[], int size){
@@ -15,34 +17,40 @@ void creat(int arr[], int size){
     }
 }
 
-void found(int a[], int b[],int m, int n){
-    bool status = false;
+void print(int a[], int m) {
     for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            if (a[i] == b[j]) {
-                status = true;
-                break;
-            }
-        }
-        if (!status) {
-            cout << a[i] << " ";
-        }
+        cout << a[i] << " ";
     }
+    cout << endl;
 }
 
 int main() {
-    srand(time(0));
     int M, N;
+
     cin >> M;
     int A[M];
-    creat(A, M);
-    print(A,M);
+    creat(A,M);
+    print(A, M);
     cin >> N;
     int B[N];
-    creat(B, N);
-    print(B,N);
-    found(A,B,M,N);
-    cout << endl;
+    creat(B,N);
+    print(B, N);
+    int C[M + N];
+    int k = 0;
+
+    for (int i = 0; i < M; i++) {
+        if (!isInArray(A[i], B, N) && !isInArray(A[i], A, i)) {
+            C[k++] = A[i];
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        if (!isInArray(B[i], A, M) && !isInArray(B[i], B, i)) {
+            C[k++] = B[i];
+        }
+    }
+
+    print(C, k);
 
     return 0;
 }

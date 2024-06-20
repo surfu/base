@@ -3,13 +3,13 @@ using namespace std;
 
 int main()
 {
-    int a, b;
-    cin>>a;
-    while (a<=500)
-    {
-        a++;
-        b = b + a;
+    int x, y, c=1;
+    cin >> x;
+    cin >> y;
+    while(y>0){
+        c = c * x;
+        y--;
     }
-    cout << b + 1 << endl;
+    cout << c << endl;
     return 0;
 }

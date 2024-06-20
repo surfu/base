@@ -1,17 +1,23 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
 
 int main()
 {
-    srand(time(0));
     const int size = 12;
     int arr[size];
+    int min = arr[0], max = arr[0], num, a;
+    // Тут можна створити звичайну програму з циклом for(;;) і таке інше але це не вказано в задачі
     for (int i = 0; i < size;i++){
-        arr[i] = rand()% 100 - 10;
+        cout << "Enter number: " << endl;
+        cin >> num;
+        arr[i] = num;
     }
-    int min = arr[0], max = arr[0];
-    for (int i = 0; i < size; i++)
+    num = 0;
+    cout << "Start" << endl;
+    cin >> a;
+    cout << "End" << endl;
+    cin >> num;
+    for (int i = a-1; i < num-1; i++)
     {
         if (arr[i] < min)
         {
