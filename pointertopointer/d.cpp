@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void addRowAtBeginning(int**& matrix, int& numRows, int numCols, const int* newRow) {
+void addRow(int**& matrix, int& numRows, int numCols, const int* newRow) {
     int** newMatrix = new int*[numRows + 1];
     newMatrix[0] = new int[numCols];
     for (int j = 0; j < numCols; ++j) {
@@ -15,7 +15,7 @@ void addRowAtBeginning(int**& matrix, int& numRows, int numCols, const int* newR
     ++numRows;
 }
 
-void printMatrix(int** matrix, int numRows, int numCols) {
+void printMat(int** matrix, int numRows, int numCols) {
     for (int i = 0; i < numRows; ++i) {
         for (int j = 0; j < numCols; ++j) {
             cout << matrix[i][j] << ' ';
@@ -35,12 +35,12 @@ int main() {
         }
     }
 
-    printMatrix(matrix, numRows, numCols);
+    printMat(matrix, numRows, numCols);
 
     int newRow[] = {10, 11, 12};
-    addRowAtBeginning(matrix, numRows, numCols, newRow);
+    addRow(matrix, numRows, numCols, newRow);
 
-    printMatrix(matrix, numRows, numCols);
+    printMat(matrix, numRows, numCols);
 
     for (int i = 0; i < numRows; ++i) {
         delete[] matrix[i];
