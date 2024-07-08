@@ -3,7 +3,7 @@
 using namespace std;
 
 
-int counttimes(string str, string word, string word_for_replace) {
+int counttimes(string str, string word) {
     int count = 0;
     int strLen = str.length();
     int wordLen = word.length();
@@ -16,7 +16,7 @@ int counttimes(string str, string word, string word_for_replace) {
             }
         }
         if (j == wordLen) {
-            str[j] = word_for_replace;
+            count++;
             i += wordLen - 1;
         }
     }
@@ -71,26 +71,53 @@ void revsesen(string str) {
     }
 }
 
+int mystrcmp(const string& str1, const string& str2) {
+    if (str1 == str2) {
+        return 0;
+    } else if (str1 > str2) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+int StringToNumber(const string& str) {
+    return stoi(str);
+}
+
+string NumberToString(int number) {
+    return to_string(number);
+}
+
+string Uppercase(string str) {
+    for (char& c : str) {
+        if (c >= 'a' && c <= 'z') {
+            c -= ('a' - 'A');
+        }
+    }
+    return str;
+}
+
+string Lowercase(string str) {
+    for (char& c : str) {
+        if (c >= 'A' && c <= 'Z') {
+            c += ('a' - 'A');
+        }
+    }
+    return str;
+}
+
+string mystrrev(string str) {
+    int len = str.length();
+    for (int i = 0; i < len / 2; ++i) {
+        swap(str[i], str[len - i - 1]);
+    }
+    return str;
+}
+ 
 int main() {
     string str = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veritatis natus tempora illum laudantium ad explicabo, maxime ex dolorum ut, alias cupiditate impedit, aliquid saepe eius eaque accusamus odit velit!";
     string word = "Lorem";
-
-    int occurrences = counttimes(str, word);
-    cout << word << " is " << occurrences << " times in the text." << endl;
-    cout<<endl;
-    int sentences = countsen(str);
-    cout <<sentences << " sentences." << endl;
-    cout<<endl;
-    int punctuationCount = punct(str);
-    cout <<punctuationCount << " ends and commas." << endl;
-    cout<<endl;
-    string reversedText = str;
-    reverse(reversedText);
-    cout << reversedText << endl;
-    cout<<endl;
-    string Text = str;
-    revsesen(Text);
-    cout <<Text << endl;
 
     return 0;
 }
